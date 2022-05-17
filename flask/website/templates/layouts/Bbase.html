@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include 'layouts/Lheader.html' %}
+        <link href="/static/styles/home.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="/static/scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/scripts/home.js"></script>
+        
+        {% block includes %}{% endblock %}
+    </head>
+    <body style="overflow: hidden;">
+        {% include 'layouts/Lnavbar.html' %}
+        <div id="root">
+            <div class="gradient"></div>
+            <div id="root-content" style="transform: translateY(200%);">
+                {% block root %}{% endblock %}
+            </div>
+        </div>
+        {% include 'layouts/Lfooter.html' %}
+    </body>
+</html>

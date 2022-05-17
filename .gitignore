@@ -1,0 +1,5 @@
+*.bat
+*.crt
+*.key
+__pycache__
+obfusicate.py

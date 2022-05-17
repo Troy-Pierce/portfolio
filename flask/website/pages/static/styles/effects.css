@@ -1,0 +1,22 @@
+.portrait{
+    width: calc(50% + 10vw);
+    max-width: 15em;
+    border: 1px solid black;
+    border-radius: 360px;
+    box-shadow: black 0px 0px 30px 1px;
+    margin-bottom: 2em;
+}
+
+.caret{
+    background-color: white;
+    width: 1px;
+    height: 1em;
+    display: inline-block;
+    margin-left: 0.2em;
+    transform: translateY(0.2em);
+    animation: caret-blink .75s steps(2, end) infinite;
+}
+@keyframes caret-blink{
+    from { background-color: transparent; }
+    to { background-color: white; }
+}

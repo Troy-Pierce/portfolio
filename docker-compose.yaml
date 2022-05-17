@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  
+    flask:
+        build: flask
+        restart: always
+        environment:
+            - FLASK_APP=./flask/application.py
+        command: gunicorn --worker-class eventlet -w 1 -b 0.0.0.0:4998 -p 4998:4998 application:application
+        volumes:
+            - "statics:/data/static"
+    nginx:
+        build: nginx
+        restart: always
+        depends_on:
+            - flask
+        ports:
+            - 80:80
+            - 443:443
+        environment:
+            - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
+            - FLASK_HOST=flask
+            - FLASK_PORT=4998
+        volumes:
+            - "statics:/data/static"
+volumes:
+    statics: 
+        external: false

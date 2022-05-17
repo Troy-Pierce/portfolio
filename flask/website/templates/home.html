@@ -1,0 +1,24 @@
+{% extends 'layouts/Bbase.html' %}
+
+{% block includes %}
+<link href="/static/styles/effects.min.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block root %}
+<div class="d-flex flex-column align-items-center">
+    <img src="/static/images/portrait.jpg" class="portrait" draggable="false">
+    <h3 caret-text="Troy Pierce" caret-speed="100"><span class="caret"></span></h3>
+    <p caret-text="Fullstack Developer" caret-speed="50"><span class="caret"></span></p>
+    
+    <div class="d-flex flex-column align-items-center" style="opacity: 0;" id="content">
+        <a ondragstart="return false;" href="javascript:void(0);" onclick="contact();" id="mlink">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/></svg>
+        </a>
+        <div style="text-align: center; margin-top: 3em">
+            <span class="text-muted">My main interest and goal is to achieve a sustainable career in Software or Web Development.</span><br>
+            <span class="text-muted">I strive to always increase my knowledge and skills in these fields while simultaneously ensuring high-quality work.</span><br>
+            <span class="text-muted">Currently studying to earn my CompTIA A+ and Network+ Certifications.</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

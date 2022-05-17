@@ -1,0 +1,21 @@
+.pcard{
+    overflow: hidden;
+    color: white;
+    width: 25em;
+    height: 14.0625em;
+    transition: all 0.2s linear;
+}
+
+.pcard-img{
+    filter: brightness(0.6);
+    position: absolute;
+    width: 25em;
+    transition: all 0.2s linear;
+}
+
+.pcard:hover{
+    transform: scale(2);
+}
+.pcard:hover .pcard-img{
+    filter: unset;
+}
