@@ -9,7 +9,7 @@ gunicorn_logger = getLogger('gunicorn.error')
 app.logger.handlers = gunicorn_logger.handlers
 app.logger.setLevel(gunicorn_logger.level)
 def create_app():
-    from keys import secret_key
+    from .keys import secret_key
     app.config['SECRET_KEY'] = secret_key
     app.config['SESSION_COOKIE_SECURE'] = True
     from .pages import home
@@ -18,6 +18,10 @@ def create_app():
     app.register_blueprint(home.home, url_prefix='/')
 
     app.config['SESSION_COOKIE_SAMESITE'] = "Lax"
+
+    from .git import github
+
+    github()
     
     return app
 

@@ -12,7 +12,8 @@ def info():
 
 @home.route('/projects')
 def projects():
-    return render_template('projects.html')
+    from ..git import github
+    return render_template('projects.html', repositories=github.getRepositories())
 
 @home.route('/test')
 def test():

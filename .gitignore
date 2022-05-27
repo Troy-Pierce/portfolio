@@ -1,6 +1,6 @@
 *.bat
 *.crt
 *.key
+!minify.bat
 __pycache__
-obfusicate.py
 keys.py
